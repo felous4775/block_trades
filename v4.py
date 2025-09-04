@@ -258,12 +258,12 @@ def reorder_headers_only(ws):
         col_idx += 4
 
 # ------------------ Streamlit App ------------------
-st.title("📊 ATHEX Block Trades Parser (Multi-PDF)")
+st.title("Block Trades Parser")
 
-pdf_files = st.file_uploader("Upload ATHEX Daily PDFs", type="pdf", accept_multiple_files=True)
+pdf_files = st.file_uploader("Upload ΗΔΤ PDFs", type="pdf", accept_multiple_files=True)
 xlsx_file = st.file_uploader("Upload Block Trades Master Excel", type="xlsx")
 
-do_sort = st.checkbox("🔠 Alphabetize company blocks (Greek first, then English)", value=False)
+do_sort = st.checkbox(" Alphabetize company blocks (Greek first, then English)", value=False)
 sort_mode = None
 if do_sort:
     sort_mode = st.radio("Choose sorting mode:", ["Fast (headers only)", "Full (all blocks)"], index=0)
@@ -322,3 +322,4 @@ if pdf_files and xlsx_file:
                 file_name=f"Block Trades_updated as of {sheet_label}.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
             )
+
